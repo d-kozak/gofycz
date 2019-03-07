@@ -94,7 +94,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'frontend';
+        this.title = 'Get out of your comfort zone';
     }
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -214,7 +214,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/david/projects/spring-angular-starter/frontend/src/main.ts */"./src/main.ts");
+        module.exports = __webpack_require__(/*! /home/david/projects/gofycz/frontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

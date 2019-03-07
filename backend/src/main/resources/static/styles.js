@@ -557,7 +557,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/david/projects/spring-angular-starter/frontend/src/styles.css */"./src/styles.css");
+        module.exports = __webpack_require__(/*! /home/david/projects/gofycz/frontend/src/styles.css */"./src/styles.css");
 
 
 /***/ })

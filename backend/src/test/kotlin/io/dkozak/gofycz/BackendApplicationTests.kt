@@ -1,4 +1,4 @@
-package io.dkozak.backend
+package io.dkozak.gofycz
 
 import org.junit.Test
 import org.junit.runner.RunWith

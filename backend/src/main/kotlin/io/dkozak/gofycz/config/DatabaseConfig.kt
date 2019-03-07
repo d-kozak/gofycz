@@ -1,4 +1,4 @@
-package io.dkozak.backend.config
+package io.dkozak.gofycz.config
 
 import org.apache.commons.dbcp.BasicDataSource
 import org.springframework.context.annotation.Bean
