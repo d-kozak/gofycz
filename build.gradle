@@ -1,0 +1,6 @@
+allprojects {
+    group = 'io.dkozak'
+    version = '0.0.1-SNAPSHOT'
+}
+
+task stage(dependsOn: ['frontend:jar','backend:bootJar'])
