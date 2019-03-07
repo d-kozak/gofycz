@@ -13748,7 +13748,7 @@ var _AstToIrVisitor = /** @class */ (function () {
         // execution proceeds from left to right, the left most part of the expression must be guarded
         // first but, because member access is left associative, the right side of the expression is at
         // the top of the AST. The desired result requires lifting a copy of the the left part of the
-        // expression up to test it for blank before generating the unguarded version.
+        // expression up to challenge it for blank before generating the unguarded version.
         // Consider, for example the following expression: a?.b.c?.d.e
         // This results in the ast:
         //         .
@@ -17935,7 +17935,7 @@ var OBJECT = 'object';
  * if a given property exist on a given element.
  *
  * NOTE: We don't yet support querying for types or events.
- * NOTE: This schema is auto extracted from `schema_extractor.ts` located in the test folder,
+ * NOTE: This schema is auto extracted from `schema_extractor.ts` located in the challenge folder,
  *       see dom_element_schema_registry_spec.ts
  */
 // =================================================================================================
@@ -19121,7 +19121,7 @@ var HtmlAstToIvyAst = /** @class */ (function () {
         }
         if (elementHasInlineTemplate) {
             var attrs = this.extractAttributes('ng-template', templateParsedProperties, i18nAttrsMeta);
-            // TODO(pk): test for this case
+            // TODO(pk): challenge for this case
             parsedElement = new Template(parsedElement.name, attrs.literal, attrs.bound, [], [parsedElement], [], templateVariables, element.sourceSpan, element.startSourceSpan, element.endSourceSpan, element.i18n);
         }
         return parsedElement;
@@ -35244,7 +35244,7 @@ function isFactory(obj) {
  */
 function isDifferent(a, b) {
     // NaN is the only value that is not equal to itself so the first
-    // test checks if both a and b are not NaN
+    // challenge checks if both a and b are not NaN
     return !(a !== a && b !== b) && a !== b;
 }
 function stringify$1(value) {
@@ -42185,7 +42185,7 @@ function getPlayers(ref) {
  * To see this in action run the following command:
  *
  *   bazel run --define=compile=aot
- *   //packages/core/test/bundling/todo:devserver
+ *   //packages/core/challenge/bundling/todo:devserver
  *
  *  Then load `localhost:5432` and start using the console tools.
  */
