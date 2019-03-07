@@ -23,6 +23,49 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+    /***/ "./src/app/_service/task.service.ts":
+    /*!******************************************!*\
+      !*** ./src/app/_service/task.service.ts ***!
+      \******************************************/
+    /*! exports provided: TaskService */
+    /***/ (function (module, __webpack_exports__, __webpack_require__) {
+
+        "use strict";
+        __webpack_require__.r(__webpack_exports__);
+        /* harmony export (binding) */
+        __webpack_require__.d(__webpack_exports__, "TaskService", function () {
+            return TaskService;
+        });
+        /* harmony import */
+        var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+        /* harmony import */
+        var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+        /* harmony import */
+        var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+        var TaskService = /** @class */ (function () {
+            function TaskService(http) {
+                this.http = http;
+                this.baseUrl = "https://gofycz.herokuapp.com";
+            }
+
+            TaskService.prototype.getRandomTask = function () {
+                return this.http.get(this.baseUrl + "/api/random-task");
+            };
+            TaskService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+                    providedIn: 'root'
+                }),
+                tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+            ], TaskService);
+            return TaskService;
+        }());
+
+
+        /***/
+    }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -74,7 +117,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <h1>\n    Welcome to {{ title }}!\n  </h1>\n  <img width=\"300\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n</div>\n<h2>Here are some links to help you start: </h2>\n<ul>\n  <li>\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/tutorial\">Tour of Heroes</a></h2>\n  </li>\n  <li>\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/cli\">CLI Documentation</a></h2>\n  </li>\n  <li>\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://blog.angular.io/\">Angular blog</a></h2>\n  </li>\n</ul>\n\n<router-outlet></router-outlet>\n"
+        module.exports = "<h1>{{title}}</h1>\n<app-task></app-task>\n"
 
 /***/ }),
 
@@ -125,6 +168,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+        /* harmony import */
+        var _task_task_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./task/task.component */ "./src/app/task/task.component.ts");
+        /* harmony import */
+        var _service_task_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_service/task.service */ "./src/app/_service/task.service.ts");
+        /* harmony import */
+        var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+
 
 
 
@@ -136,13 +188,15 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
+                _task_task_component__WEBPACK_IMPORTED_MODULE_5__["TaskComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"]
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"]
             ],
-            providers: [],
+            providers: [_service_task_service__WEBPACK_IMPORTED_MODULE_6__["TaskService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
@@ -150,8 +204,88 @@ var AppModule = /** @class */ (function () {
 }());
 
 
+        /***/
+    }),
 
-/***/ }),
+    /***/ "./src/app/task/task.component.css":
+    /*!*****************************************!*\
+      !*** ./src/app/task/task.component.css ***!
+      \*****************************************/
+    /*! no static exports found */
+    /***/ (function (module, exports) {
+
+        module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Rhc2svdGFzay5jb21wb25lbnQuY3NzIn0= */"
+
+        /***/
+    }),
+
+    /***/ "./src/app/task/task.component.html":
+    /*!******************************************!*\
+      !*** ./src/app/task/task.component.html ***!
+      \******************************************/
+    /*! no static exports found */
+    /***/ (function (module, exports) {
+
+        module.exports = "<p>{{randomTask.challenge}}</p>\n<button (click)=\"newChallenge()\">New challenge</button>\n"
+
+        /***/
+    }),
+
+    /***/ "./src/app/task/task.component.ts":
+    /*!****************************************!*\
+      !*** ./src/app/task/task.component.ts ***!
+      \****************************************/
+    /*! exports provided: TaskComponent */
+    /***/ (function (module, __webpack_exports__, __webpack_require__) {
+
+        "use strict";
+        __webpack_require__.r(__webpack_exports__);
+        /* harmony export (binding) */
+        __webpack_require__.d(__webpack_exports__, "TaskComponent", function () {
+            return TaskComponent;
+        });
+        /* harmony import */
+        var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+        /* harmony import */
+        var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+        /* harmony import */
+        var _service_task_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_service/task.service */ "./src/app/_service/task.service.ts");
+
+
+        var TaskComponent = /** @class */ (function () {
+            function TaskComponent(taskService) {
+                this.taskService = taskService;
+                this.randomTask = {
+                    challenge: 'Loading...'
+                };
+            }
+
+            TaskComponent.prototype.ngOnInit = function () {
+                this.randomChallenge();
+            };
+            TaskComponent.prototype.newChallenge = function () {
+                this.randomChallenge();
+            };
+            TaskComponent.prototype.randomChallenge = function () {
+                var _this = this;
+                this.taskService.getRandomTask()
+                    .subscribe(function (task) {
+                        return _this.randomTask = task;
+                    });
+            };
+            TaskComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+                    selector: 'app-task',
+                    template: __webpack_require__(/*! ./task.component.html */ "./src/app/task/task.component.html"),
+                    styles: [__webpack_require__(/*! ./task.component.css */ "./src/app/task/task.component.css")]
+                }),
+                tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"]])
+            ], TaskComponent);
+            return TaskComponent;
+        }());
+
+
+        /***/ }),
 
 /***/ "./src/environments/environment.ts":
 /*!*****************************************!*\
