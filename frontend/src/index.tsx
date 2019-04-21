@@ -9,9 +9,9 @@ interface Task {
 }
 
 const Task = ({task}: { task: Task | null }) => {
-    return <div>
-        {task && <h1>{task.challenge}</h1>}
-        {!task && <h3>Loading...</h3>}
+    return <div className="task">
+        {task && <span className="taskText">{task.challenge}</span>}
+        {!task && <span className="loadingText">Loading...</span>}
     </div>
 };
 
@@ -24,7 +24,7 @@ function loadRandomTask():Promise<Task> {
 const App = () => {
     const [task, setTask] = useState<Task | null>(null)
 
-    const randomTask = () => {
+    const showNewRandomTask = () => {
         setTask(null);
         loadRandomTask()
             .then(task => setTask(task))
@@ -32,12 +32,13 @@ const App = () => {
     }
 
     useEffect(() => {
-        randomTask()
+        showNewRandomTask()
     }, []);
 
-    return <div>
+    return <div className="root">
         <Task task={task}/>
-        <button onClick={randomTask}>Done</button>
+        <button className="doneButton" onClick={showNewRandomTask}><i className="material-icons doneIcon">done</i>
+        </button>
     </div>
 }
 
