@@ -3,4 +3,4 @@ allprojects {
     version = '0.0.1-SNAPSHOT'
 }
 
-task stage(dependsOn: ['frontend:jar','backend:bootJar'])
+task stage(dependsOn: ['frontend:packageApp','backend:bootJar'])
