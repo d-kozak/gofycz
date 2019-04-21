@@ -10,8 +10,9 @@ import org.springframework.stereotype.Component
 class SecurityConfig : WebSecurityConfigurerAdapter() {
     override fun configure(http: HttpSecurity) {
         http
+                .cors()
+                .and()
                 .csrf().disable()
-                .cors().disable()
                 .authorizeRequests()
                 .antMatchers("/**")
                 .permitAll()
