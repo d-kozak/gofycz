@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 interface Task {
-    id:number
-    challenge:string,
+    id: number
+    challenge: string,
 }
 
 const Task = ({task}: { task: Task | null }) => {
@@ -16,7 +16,7 @@ const Task = ({task}: { task: Task | null }) => {
 };
 
 
-function loadRandomTask():Promise<Task> {
+function loadRandomTask(): Promise<Task> {
     return fetch("https://gofycz.herokuapp.com/api/random-task")
         .then(data => data.json());
 }
@@ -35,9 +35,17 @@ const App = () => {
         showNewRandomTask()
     }, []);
 
+    const btnRef = useRef<HTMLButtonElement>(null);
+    useEffect(() => {
+        if (btnRef.current) {
+            btnRef.current.focus();
+        }
+    }, [])
+
     return <div className="root">
         <Task task={task}/>
-        <button className="doneButton" onClick={showNewRandomTask}><i className="material-icons doneIcon">done</i>
+        <button ref={btnRef} className="doneButton" onClick={showNewRandomTask}><i
+            className="material-icons doneIcon">done</i>
         </button>
     </div>
 }
